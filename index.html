@@ -1677,7 +1677,7 @@
            <div class="row">
             <div class="col-md-4">
                 
-                <p class="lead text-left"><strong>Censor Me</strong> is a Flash app that uses OpenCV to superimpose a black bar over any eyes it finds in the frame. It also emits a loud beep any time it detects speech. No need to wait for someone else to object to something you’ve said!</p><div class="hidden-md hidden-sm hidden-xs pull-left"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="350" height="263" id="CensorMe"><param name="movie" value="flash/CensorMe.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#000000" /><param name="play" value="true" /><param name="loop" value="true" /><param name="wmode" value="window" /><param name="scale" value="showall" /><param name="menu" value="true" /><param name="devicefont" value="false" /><param name="salign" value="" /><param name="allowScriptAccess" value="sameDomain" /><embed src="flash/CensorMe.swf" quality="high" bgcolor="#000000" width="350" height="263" name="CensorMe" align="middle" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash" wmode="window" play="true" pluginspage="http://www.macromedia.com/go/getflashplayer" class="dropshadow" /></object><p></p><blockquote class="small blockquote hidden-md hidden-sm hidden-xs text-left text-primary research-interests"><i>If you're not on mobile (it's disabled because of Flash and because Apple doesn't implement getUserMedia on its iDevices), press the button above to activate your camera and mic (it takes a second for the buttons on the Flash panel to become enabled). If you're on a computer and there is no button above, try increasing the size of your browser window.</i></blockquote><p></p></div>
+                <p class="lead text-left"><strong>Censor Me</strong> was a Flash app that used OpenCV to superimpose a black bar over any eyes it found in the frame. It also emitted a loud beep any time it detected sound. No need to wait for someone else to object to something you’ve said!</p><p class="text-left"><strong>Try it here (you'll have to give the browser permission to access your camera and mic) or watch a video.</strong></p><div class="pull-left"><iframe class="embed-responsive-item" width="350" height="263" src="censorme/index.html" id="censorme_app" frameborder="0"></iframe><p></p><blockquote class="small blockquote text-left text-primary research-interests"><i>After Flash was finally deprecated in Chrome at the end of 2020, I spent a couple of hours rewriting it in Javascript. The face detector isn't quite as robust as the one I was using previously, but it's still pretty good, especially running directly in the browser.<br/><br/>I wanted to include voice activity detection so that the beeping would only be triggered by speech (rather than by sound volume) but the Javascript speech recognition API only works on Chrome and sends your audio to a server, which I don't want to do, and none of the lightweight options actually differentiate between speech and other continuous sounds.</i></blockquote><p></p></div>
                 <hr class="star-primary">
                 <ul class="list-inline item-details text-left">
                     <li>When:
@@ -1689,7 +1689,7 @@
                         <span class="label label-primary label-category text-capitalize"><strong>Computer Vision
                         </strong></span> 
                         
-                        <span class="label label-primary label-category text-capitalize"><strong>Flash
+                        <span class="label label-primary label-category text-capitalize"><strong>Ex-Flash
                         </strong></span> 
                         
                     </li>
@@ -1697,8 +1697,7 @@
             </div>
             <div class="col-md-8">
                 
-                <div class="extra"><div class="embed-responsive embed-responsive-4by3"><iframe class="embed-responsive-item" width="640" height="480" src="https://www.youtube-nocookie.com/embed/757C_WqTLgM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
-                
+                <div class="extra"><div class="embed-responsive embed-responsive-4by3"><iframe id="censorme_vid" class="embed-responsive-item" width="640" height="480" src="https://www.youtube-nocookie.com/embed/757C_WqTLgM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
                 
             </div>
         </div>
@@ -1972,7 +1971,9 @@
 <script src="js/creative.js"></script>
 <script>
 	$(".portfolio-modal").on('hidden.bs.modal', function (e) {
-		$iframe = $(this).find("iframe");
+        // I had to add .first() because setting the attribute was
+        // wreaking havoc on the CensorMe page which has 2 iframes
+		$iframe = $(this).find("iframe").first();
 		if ($iframe.attr('class') == "npr-iframe-content") {
 			$nprContent = $(".npr-iframe-content").clone();
 			$(".npr-iframe").empty();
@@ -1987,7 +1988,7 @@
 		$iframe.attr("src", $iframe.attr("src"));
 	});
 	$(".portfolio-modal").on('show.bs.modal', function (e) {
-		$iframe = $(this).find("iframe");
+		$iframe = $(this).find("iframe").first();
 		if ($iframe.attr('id') == "oracle") {
 			$iframe.prop('src', "https://oracle-b35dc.firebaseapp.com/");
 		}
