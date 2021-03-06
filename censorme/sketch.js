@@ -6,9 +6,6 @@ let paused = true;
 let mic;
 let monoSynth;
 
-const CANVAS_HEIGHT = 225;
-const CANVAS_WIDTH = 300;
-
 let note = 'C6';
 // note velocity (volume, from 0 to 1)
 let velocity = .5;
@@ -27,10 +24,7 @@ const detectionOptions = {
 };
 
 function setup() {
-	createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
-	if (window.DeviceOrientationEvent) {
-    window.addEventListener('deviceorientation', onOrientationChange);  
-  }
+	createCanvas(300, 225);
 	button = new Clickable();
 	button.width = 50;
 	button.height = 20;
@@ -105,17 +99,6 @@ function draw() {
 			setTimeout(function(){micThreshold = MIC_INIT;},1000);
 		}
 	}
-}
-
-function onOrientationChange(e) {
-  noCanvas();
-  if (DeviceOrientation == "PORTRAIT") {
-  	createCanvas(CANVAS_HEIGHT,CANVAS_WIDTH);
-  }
-  else {
-  	createCanvas(CANVAS_WIDTH,CANVAS_HEIGHT);
-  }
-  video.size(width,height);
 }
 
 function drawLandmarks(detections) {
