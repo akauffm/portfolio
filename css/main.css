@@ -461,3 +461,7 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #222;
   padding-top: 32px; }
+
+video {
+  padding-bottom: 10px;
+}
