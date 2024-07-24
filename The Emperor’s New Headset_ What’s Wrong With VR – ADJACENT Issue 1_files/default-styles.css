@@ -1,0 +1,94 @@
+/**
+ * Default style definitions for the Post Content Shortcodes plugin
+ * @package WordPress
+ * @subpackage Post Content Shortcodes
+ * @version 1.0
+ */
+ul.post-list {
+	float: none;
+	clear: both;
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.post-list>li {
+	display: block;
+	clear: both;
+	list-style: none;
+	margin: 0 0 1em;
+	padding: 0;
+	break-inside: avoid-column;
+	-moz-break-inside: avoid-column;
+	column-break-inside: avoid;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	-o-column-break-inside: avoid;
+	border-bottom: 1px dotted #666;
+}
+
+.widget .post-list>li {
+	border: none;
+}
+
+.post-list.with-excerpt {
+	column-count: 2;
+	column-gap: 3em;
+	column-rule: 1px dotted #666;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 3em;
+	-webkit-column-rule: 1px dotted #666;
+	-moz-column-count: 2;
+	-moz-column-gap: 3em;
+	-moz-column-rule: 1px dotted #666;
+	-o-column-count: 2;
+	-o-column-gap: 3em;
+	-o-column-rule: 1px dotted #666;
+}
+
+.pcs-excerpt-wrapper {
+	clear: both;
+	float: none;
+}
+
+.with-excerpt .pcs-post-title {
+	font-size: 2em;
+	line-height: 1.25em;
+	color: #000;
+	font-family: MuseoSlab500, Verdana, Geneva, sans-serif;
+}
+
+.pcs-post-title a {
+	color: #000;
+	text-decoration: none;
+}
+
+.pcs-featured-image {
+	float: left;
+	clear: left;
+	margin: 1em 1em 1em 0;
+	border: none;
+	padding: 0;
+}
+
+/*
+     FILE ARCHIVED ON 02:51:17 Dec 13, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 05:52:41 Jul 24, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 1.435 (2)
+  exclusion.robots: 0.063 (2)
+  exclusion.robots.policy: 0.036 (2)
+  esindex: 0.029 (2)
+  cdx.remote: 22.495 (2)
+  LoadShardBlock: 1378.982 (6)
+  PetaboxLoader3.resolve: 1289.102 (5)
+  PetaboxLoader3.datanode: 341.318 (8)
+  load_resource: 276.807 (2)
+*/

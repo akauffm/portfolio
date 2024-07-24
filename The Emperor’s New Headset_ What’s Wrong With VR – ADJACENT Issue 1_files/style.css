@@ -1,0 +1,1305 @@
+/*
+Theme Name: Adjacent (from BlankSlate)
+Theme URI:
+Author: Ziyu and Sejo (edited from TidyThemes)
+Author URI: 
+Description: Adjacent
+Version: 1
+License: GNU General Public License
+License URI: https://www.gnu.org/licenses/gpl.html
+Tags: black, blue, white, light, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
+Text Domain: blankslate
+
+BlankSlate WordPress Theme © 2011-2015 TidyT.arhemes
+BlankSlate is distributed under the terms of the GNU GPL
+*/
+
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}
+.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
+
+/* FONTS */
+@font-face{
+ font-family: 'Chaparral';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/Chaparral-Pro-Regular.ttf');
+}
+@font-face {
+font-family: 'Circular Pro Book';
+src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/lineto-circular-pro-book.woff') format('woff');
+}
+@font-face {
+font-family: 'Circular Pro Bold';
+src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/lineto-circular-pro-bold.woff') format('woff');
+}
+@font-face {
+font-family: 'Amiri BoldSlanted';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/Amiri-BoldSlanted.ttf');
+}
+@font-face {
+font-family: 'Amiri Bold';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/Amiri-Bold.ttf');
+}
+@font-face {
+font-family: 'Amiri Regular';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/Amiri-Regular.ttf');
+}
+@font-face {
+font-family: 'Amiri Slanted';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/Amiri-Slanted.ttf');
+}
+@font-face {
+font-family: 'Fabrica';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/Fabrica.otf');
+}
+@font-face {
+font-family: 'Circular Pro Book Italic';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/lineto-circular-pro-bookItalic.woff');
+}
+@font-face {
+font-family: 'Circular Pro Medium Italic';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/lineto-circular-pro-mediumItalic.woff');
+}
+@font-face {
+font-family: 'Circular Pro Medium';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/lineto-circular-pro-medium.woff');
+}
+@font-face {
+font-family: 'Monoist-Regular';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/Monoist-Regular.otf');
+}
+@font-face {
+font-family: 'MalayalamMN';
+ src: url('/web/20181213025117im_/https://itp.nyu.edu/adjacent/issue-1/wp-content/themes/adjacent/font/MalayalamMN.ttf');
+}
+
+
+
+/* CUSTOM */
+
+body {
+    background-color: #f9f4ef;
+    font-family: 'Circular Pro Book', sans-serif;
+}
+
+i {
+ font-style:italic;   
+}
+
+b, strong {
+ font-weight:bold;   
+}
+
+p {
+ padding-bottom: 1em;
+}
+
+a{
+ text-decoration:none;
+ color:black;
+   /* color:#949181;*/
+}
+
+h1{
+ font-size: 200%;
+ line-height:1.2em;
+}
+
+h2{
+ font-size: 170%;
+    line-height:1.2em;
+}
+
+h3{
+ font-size: 150%;
+ line-height:1.2em;
+}
+
+pre{
+	font-family: 'Monoist-Regular',serif;
+	font-size: smaller;   
+}
+
+/* LISTS */
+ul {
+    list-style: circle inside;
+    padding: 1em;
+}
+
+ol {
+ list-style: decimal inside;  
+    padding: 1em;
+}
+
+img{
+ vertical-align:middle;   
+}
+
+/* IMAGES ALIGNMENT */
+.alignright,.alignleft,.alignnone, .aligncenter{
+ margin:auto;
+max-width:100%;
+ height:auto;
+   
+}
+
+
+.wrapright{
+ float:right;   
+    /*
+    position:relative;
+    left:1em;*/
+    max-width:45%;
+    height:auto;
+    margin-left:1em;
+    margin-bottom:0.5em;
+}
+.wrapleft{
+ float:left; 
+    /*
+    position:relative;
+    right:1em;
+    */
+    max-width:45%;
+    height:auto;
+    margin-right:1em;
+    margin-bottom:0.5em;
+}
+
+
+/* Image captions */
+#article-content .wp-caption-text{
+ font-style:italic;
+ font-size: 0.9em;
+ width:100%;
+}
+
+.lcp_line{
+ background-image:url('https://web.archive.org/web/20181213025117im_/https://itp.nyu.edu/adjacent/wp-content/uploads/2017/08/block_lines.png');   
+ border: 0px;
+ height:10px;
+ /*width:80%;*/
+    margin-bottom:2em;
+}
+
+#front-page-image{
+	/*height:500px;*/
+    margin:auto;
+	width: 100%;
+	text-align: center;
+/*	padding: 50px 0 50px 0;*/
+}
+.front-page-img{
+ width:100%;   
+}
+
+/* SIDEBAR */
+#sidebar{
+ position:fixed;
+ font-size:12px;
+ top:0%;
+ left:-1px;
+    
+/* Transition: */
+ /*left:-20%;*/
+ /*-webkit-transition: left 1s; /* Safari 3.1 to 6.0 */
+ /*transition: left 1s;   */
+    
+ width:18%;
+ height:100%;
+/* overflow-y: auto;/* Include scrollbar when content exceeds height */
+
+ line-height:1.2em;
+  padding:0.5em 0;
+  z-index:100;
+    list-style:none;  
+}
+#primary{
+	position:relative;
+    list-style:none;  
+    padding:1em 0em;
+    background-color:#000;
+   /* width:50%;*/
+    height:100%;
+    opacity:0.8;
+	position:relative;
+	left:-100%;
+	z-index:100;
+    -webkit-transition-property: left,opacity;
+    -webkit-transition-duration: .8s; /* Safari 3.1 to 6.0 */
+    transition-property: left,opacity;
+    transition-duration: .8s;
+    -webkit-transition-timing-function: ease-in; /* Safari and Chrome */
+    transition-timing-function: ease-in;
+	overflow-y:auto;
+    
+    box-shadow:1px 1px 5px #CCC;
+    font-family:'Monoist-Regular', serif;
+}
+#primary:hover{
+ opacity:1.0;   
+ left:0%;
+}
+
+.widget-area-hidden{
+ opacity:0.1;   
+}
+#sidebar ul{
+    list-style:none;  
+    margin-top:80px;
+}
+#sidebar li{
+    padding:0em 1em 1em;   
+}
+
+#sidebar .widget-title {
+    color: #fff;
+}
+
+.lcp_toc_item{
+     padding:0em 1em 1em;   
+    
+}
+
+.lcp_toc_item a {
+    color: white;
+}
+
+.lcp_toc{
+/* width:20%;*/ 
+    font-size:0.9em;
+}
+.lcp_toc_title{
+    position:relative;
+    -webkit-transition-property: right,bottom;
+    -webkit-transition-duration: 0.5s; /* Safari 3.1 to 6.0 */
+    transition-property: right,bottom;
+    transition-duration: 0.5s;
+    right:0px;
+    bottom:0px;
+   /* color:red;*/
+}
+.lcp_toc_title:hover{
+ right:3px;
+ bottom:3px;
+}
+
+.lcp_toc_appear{
+ width:40%;
+  position:absolute;
+  left:42%;
+    top:20%;
+ opacity:0;
+    padding:1em;
+    background-color: #f9f4ef;
+    z-index:2;
+   /* font-size:smaller;  */
+    -webkit-transition-property: opacity,left;
+    -webkit-transition-duration: 0.8s; /* Safari 3.1 to 6.0 */
+    transition-property: opacity,left;
+    transition-duration: .8s;
+    -webkit-transition-timing-function: ease-in; /* Safari and Chrome */
+    transition-timing-function: ease-in;
+}
+/* Hover on highlight to show annotation */
+.lcp_toc_title:hover ~ .lcp_toc_appear{
+ opacity:1; 
+ left:42%;
+}
+.lcp_toc_appear:hover{
+  /*  opacity:1;*/
+}
+.lcp_toc_thumbnail{
+ text-align:center;   
+}
+
+.widget-title{
+ padding-bottom:1em;   
+}
+
+/* HEADER */
+#header{
+	position: fixed;
+	width: 100%;
+	background: #f9f4ef;
+	z-index: 10;
+	/*top:0;*/
+	box-shadow:0px 2px 4px rgba(180, 180, 180, 0.5);;
+}
+
+.header-normal{
+ top:0;   
+}
+
+.header-front-page{
+ top:-130px;   
+      -webkit-transition-property: top;
+    -webkit-transition-duration: .8s; /* Safari 3.1 to 6.0 */
+    transition-property: top;
+    transition-duration: .8s;
+    -webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+    transition-timing-function: ease-out;
+}
+
+
+/* MAIN PAGE with List Category Posts */
+#introduction{
+ /*height:300px;*/
+ /*overflow-y:auto;*/
+ /*width:80%;*/
+ margin:auto;
+}
+.lcp_catlist{
+ list-style:none;   
+ /*margin-left:10%;*/
+    font-family: 'Circular Pro Book', sans-serif;
+    width:85%;
+    margin:auto;
+ /*height: 300%; /* Predefined height so that li elements can fit*/
+}
+
+.lcp_item{
+ position:relative;
+ left:10%;
+    min-height:200px;
+}
+
+.lcp_item_small{
+ width:50%;
+ display: inline-block;
+ left:8%;
+ min-height:180px;
+}
+
+.lcp_item_small .lcp_excerpt{
+ display:inline-block;
+    font-size:0.7em;
+    position:absolute;
+    top:7em;
+    right:31%;
+    width:60%;
+}
+.lcp_item_small .lcp_thumbnail{
+ display:none;   
+}
+.lcp_item_small .lcp_wrapper{
+ width:70%;   
+}
+
+/*.lcp_catlist*/ .lcp_thumbnail{ /* thumbnail */
+	/*float: right;*/
+    display:inline-block;
+    margin-left:1em;
+    /*border:2px solid black;
+    
+	position: relative;
+	left: 50%;
+	bottom: 100px;*/
+}
+
+.lcp_number{
+ display:inline-block;
+    font-family: 'Monoist-Regular', serif;
+  vertical-align:top;
+    position:relative;
+    top:0.3em;
+    right:0.5em;
+}
+
+.lcp_wrapper{ /* Wrapping title and author*/ 
+    border: 4px solid #f9f4ef;
+ /*   border:3px solid black;*/
+    background-color: #f9f4ef;
+    padding:0em 1em;
+    width:35%;
+   
+    /* for the animation of the wrapper: */
+    position:relative;
+    bottom:0;
+    right:0;
+    -webkit-transition-property: border-color,right,bottom;
+    -webkit-transition-duration: .8s; /* Safari 3.1 to 6.0 */
+    transition-property: border-color,right,bottom;
+    transition-duration: .8s;
+    display:inline-block;
+    vertical-align:top;
+}
+.lcp_title{
+ font-size:1.1em;;   
+ line-height:1.2em;
+    text-align:left;
+    font-family: 'Circular Pro Book', sans-serif;
+}
+.lcp_title a{
+ text-decoration:none !important;   
+}
+.lcp_customfield{ /* Name */
+    font-family: 'Monoist-Regular', serif;
+    margin-top:0.5em;
+    font-size:0.7em;
+}
+.lcp_appear{  /*  The excerpt + thumbnail*/
+	text-align:justify;
+    
+   /* position: absolute;*/
+	left: 15%;
+    top:10%;
+    /*bottom:200px;*/
+    z-index:1;
+	/*position:relative;
+    left:220px;
+    bottom:1em;*/
+   /* display:inline-block;*/
+    width:20%;
+    margin: 1em;
+    
+    opacity:1;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: .8s; /* Safari 3.1 to 6.0 */
+    transition-property: opacity;
+    transition-duration: .8s;
+   /*
+    color: rgba(0,0,0,0);
+    -webkit-transition: color 1s;
+    transition: color 1s;*/
+}
+.lcp_excerpt{
+ display:inline-block;
+    line-height:1.2em;
+    /*font-size:small;*/
+ width:30%;
+    font-size:0.7em;
+    position:absolute;
+    top:9em;
+    right:65%;
+    padding-left:5%;
+    font-family:'Chaparral',serif;
+}
+
+.lcp_wrapper:hover{ /* Make the wrapper move and get a border */
+   /* border-color:black;
+    /*right:2em;
+    bottom:2em;*/
+   /* right:0.5em;
+    bottom:0.5em;*/
+}
+
+.lcp_wrapper:hover ~ .lcp_appear{ /* Makes excerpt appear when hovering on wrapper*/
+    opacity:1;
+    /*color: rgba(0,0,0,1.0);*/
+}
+
+
+
+/* ARTICLE */
+/* ARTICLE HEADER */
+#article-header{
+  width: 100%;
+  text-align:center;
+  margin:100px auto 0;
+
+    /*
+  border-top: 4px solid black;
+  border-left: 4px solid black;
+  border-right: 4px solid black;*/
+}
+
+#article-header .block{ /* Each block of the header */
+/* border-bottom: 4px solid black;*/
+/* padding: 2em 0%;*/
+}
+
+.article-header-fingerprint{ /* Image of the article */
+ height:30px;   
+ padding: 1em 0%;
+ margin-top: 1em;
+ opacity:0.5;
+}
+
+.article-footer-fingerprint{
+    height:160px;   
+ padding: 1em 0%;
+    opacity:0.5;
+}
+
+.article-header-illustrator{
+	font-family:'Monoist-Regular', serif;
+	/*font-style: italic;*/
+	padding-top: 1em;
+	/*margin-left: 15%;*/
+	text-align:left;
+	margin:auto;
+	width:80%;
+    padding-left:5%;
+}
+
+.front-page-header-thumbnail{ /* Image of the article */
+ height:200px;   
+ padding: 2em 0%;
+}
+
+/*#article-header h1 { /* Title of the article */
+.title{
+ font-size: 60px;
+ font-family: 'MalayalamMN','Circular Pro Book',sans-serif;
+ width: 80%;
+ margin:3em auto 0em;   
+ text-align:justify;
+ padding-left:5%;
+}
+
+#article-header h2 { /* Author(s) of the article */
+	font-size: 23px;
+	font-family: 'Monoist-Regular', serif;
+	/* margin-bottom: 1em; */
+	/*background: rgba(249,244,239,0.95);*/
+	width: 80%;
+	margin: auto;
+	text-align:left;
+	/* vertical-align: middle; */
+	padding: 0.3em 0em;
+    margin-top:1em;
+    padding-left:5%;
+    
+}
+
+#article-header #excerpt{ /* Excerpt */
+ 	width:30%;
+    margin:2em auto 1em;
+    text-align:justify;
+    font-size: 22px;
+    font-family: 'Chaparral', serif;
+    line-height: 1.2em;
+}
+/* ARTICLE SIDEBAR */
+#article-sidebar-handle{
+ font-size: 11px;
+ padding:0em 1em 1em;
+ color: rgba(0,0,0,1.0);
+    background-color:#f9f4ef;
+    font-family:'Monoist-Regular',serif;
+ /*-webkit-transition-property: color;
+ -webkit-transition-duration: 1s; 
+ transition-property: color;
+ transition-duration: 1s;  */
+    
+ position:fixed;
+    top: 50%;
+   -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+	-webkit-transition-property: opacity;
+    -webkit-transition-duration: .8s; /* Safari 3.1 to 6.0 */
+    transition-property: opacity;
+    transition-duration: .8s;
+}
+.article-sidebar-handle-hidden{
+ opacity:0;   
+}
+.article-sidebar-handle-shown{
+ opacity:0.9;   
+}
+
+#article-sidebar{
+ position:fixed;
+background-color:#f9f4ef;
+ font-size:12px;
+ top:10%;
+/* Transition: */
+ left:-20%;
+ -webkit-transition: left .8s; /* Safari 3.1 to 6.0 */
+ transition: left .8s; 
+    -webkit-transition-timing-function: ease-in; /* Safari and Chrome */
+    transition-timing-function: ease-in;
+    
+ width:20%;
+ height:80%;
+ overflow-y: auto;/* Include scrollbar when content exceeds height */
+
+ line-height:1.2em;
+  padding:1em 0;
+  z-index:1;
+}
+
+#article-sidebar ul{
+padding: 1em;    
+list-style:none;
+}
+
+#article-sidebar li{
+ padding:0em 1em 1em;      
+}
+
+#article-sidebar-handle:hover{ /* Turns off sidebar handle alpha*/
+ color: rgba(0,0,0,0.0);
+}
+
+/* This causes the handle to show the sidebar when mouse is over*/
+#article-sidebar-handle:hover ~ #article-sidebar{
+    /*display:block;*/
+     left:0.5%;
+}
+
+#article-sidebar-handle:hover ~ #primary{
+    /*display:block;*/
+     left:0%;
+}
+
+
+/* This makes the sidebar to keep showing while the mouse is over*/
+#article-sidebar:hover{
+    left:0.5%;
+}
+
+/* ARTICLE NOTES SIDEBAR */
+#article-notes-handle{
+    font-size: 11px;
+ padding:0em 1em 1em;
+    background-color:#f9f4ef;
+    font-family:'Monoist-Regular',serif;
+ position:fixed;
+    top: 50%;
+    right:2%;
+	z-index:1;
+   -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+    
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: .8s; /* Safari 3.1 to 6.0 */
+    transition-property: opacity;
+    transition-duration: .8s;
+    -webkit-transition-timing-function: ease-in; /* Safari and Chrome */
+    transition-timing-function: ease-in;
+}
+.article-notes-handle-hidden{
+ opacity:0;   
+}
+.article-notes-handle-shown{
+ opacity:0.9;   
+}
+
+#article-notes{
+ height:80%;
+ overflow-y:auto;
+ width:20%;
+ line-height:1.2em;
+      position:fixed;
+background-color:#f9f4ef;
+ font-size:12px;
+    z-index:1;
+ top:15%;
+/* Transition: */
+ 
+    -webkit-transition-property: right,opacity;
+    -webkit-transition-duration: .8s; /* Safari 3.1 to 6.0 */
+    transition-property: right,opacity;
+    transition-duration: .8s;
+    -webkit-transition-timing-function: ease-in; /* Safari and Chrome */
+    transition-timing-function: ease-in;
+    
+    
+ border: 10px solid #f9f4ef;
+ padding:1em;
+  font-family: 'Monoist-Regular', serif;
+    
+    box-shadow:1px 1px 5px #CCC;
+}
+.article-notes-hidden{
+ right:-25%;   
+    opacity:0;
+}
+
+.article-notes-unselected{
+ right:-25%;   
+    opacity:0.1;
+}
+
+.article-notes-unselected:hover{
+ right:0%;   
+    opacity:1.0;
+}
+
+.article-notes-selected{
+ right:0.0%;   
+    opacity:1.0;
+}
+/* Footnotes list formatting */
+#article-notes ul{
+    list-style:none;
+    text-align:left;
+}
+#article-notes li{
+   padding-bottom:1em;
+}
+
+#article-notes li span{   
+ font-weight:bold;
+ /*margin-right:2em;*/
+ font-size:1.1em;
+ display:inline-block;
+ margin-left:-1em;
+ margin-right:1em;
+ width:auto;
+}
+
+#article-notes li:target{
+   /*color:red;*/
+}
+
+/* This causes the handle to show the sidebar when mouse is over*/
+#article-notes-handle:hover ~ #article-notes{
+     right:0.0%;
+}
+
+/* This makes the sidebar to keep showing while the mouse is over*/
+#article-notes:hover{
+    right:0.0%;
+}
+
+#article-notes a{
+ text-decoration:underline;   
+    color:#949181;
+}
+
+/* PAGE CONTENT */
+
+#page-content p,  #page-content pre, #page-content h1, #page-content h2, #page-content h3{
+ width:50%;
+    margin:auto;
+}
+#page-content ol, #page-content ul{
+ width:40%;
+    margin:auto;
+}
+
+#page-content{
+ padding: 1em 1em 0em;   
+}
+#article-content{
+    padding: 5em 1em 0em;
+}
+
+/*ARTICLE CONTENT*/
+#article-content h1, #article-content h2, #article-content h3, #article-content h4,
+#page-content h1, #page-content h2, #page-content h3, #page-content h4{
+	font-family:'Circular Pro Book',sans-serif;
+    padding:1em 0;
+    text-align:left;
+}
+
+#article-content, #page-content{
+ width:80%;
+ text-align: justify;
+ line-height: 1.5em;
+ font-family:'Chaparral', serif;
+ margin: auto;
+ font-size: 18px;
+}
+
+#article-content p, #article-content pre, #article-content h1, #article-content h2, #article-content h3, #article-content h4{
+ width:50%;
+ margin:auto;
+}
+
+#article-content ol, #article-content ul{
+     width:40%;
+ margin:auto;
+}
+
+
+#article-content a,#page-content a{ /* links in content */
+    text-decoration:underline;
+   /* color:#949181;*/
+}
+
+#article-content a:hover, #page-content a:hover{ /* links in content */
+    text-decoration:none;
+}
+
+#article-content blockquote{
+ /*font-size: 25px;
+ line-height: 1.3em;*/
+ font-style:italic;
+ /*width: 60%;*/
+ /*margin:0 5% 0 auto;*/
+ /*text-align: right;*/
+}
+
+/* Footnote link in content*/
+#article-content .fn{
+ vertical-align: super;
+ font-size: x-small;
+}
+
+#article-content #article-author-name{
+ /*font-weight:bold;*/
+ text-align:center;
+ font-family:'Circular Pro Bold',sans-serif;
+ font-size:12px;
+ margin-top:5em;
+ padding:0;
+}
+
+#article-content #article-author-blurb{
+ font-family:'Circular Pro Book', sans-serif;
+ font-size:14px;
+ padding:5em 0em;
+}
+
+#article-author-blurb a{
+ color:#949181;   
+}
+
+/* HEADER */
+#site-title{
+ padding:20px 20px 10px 20px;
+ font-size:large;
+ text-align:center;
+ /*position:fixed;*/
+ /*border-bottom: 5px dotted black;*/
+}
+
+#site-description{
+ text-align:center;   
+    font-family: 'Chaparral', serif;
+    padding-bottom:20px;
+}
+
+.site-description-front{
+    font-size:small;
+}
+
+.site-description-normal{
+ font-size:x-small;   
+}
+
+.entry-title{
+ font-size:42px;
+ padding:2em 30% 0.5em;
+ /*border-bottom: 5px dashed black;*/
+ margin-bottom: 0em;
+    margin-top:100px;
+ font-family: 'MalayalamMN','Circular Pro Book',sans-serif;
+}
+
+.menu{
+ list-style:none;   
+    margin-top:0.5em;
+}
+
+.headbar{ /* Menus*/
+    position:absolute;
+    top:0.1em;
+}
+
+#menubar{
+ right: 5%;
+}
+
+#menubar li{
+ display:inline-block;
+ margin-left:1.5em;
+}
+
+
+/* FOOTER */
+#copyright{
+ font-size:11px;
+ text-align:center;
+ padding:1em;
+ font-family: Chaparral, serif;
+ line-height:1.2em;
+}
+
+#copyright a{
+ text-decoration:underline;   
+ /*color:#949181;   */
+}
+
+#copyright a:hover{
+ text-decoration:none;   
+}
+
+/* ISSUE 1 */
+
+/* HUMBUG - Andrew's piece styles*/
+.table-humbug{
+ padding:1em;   
+ width:80%;
+ margin:auto;
+}
+.section-humbug{ /* For sections separation*/
+ text-align:center;   
+}
+
+.table-humbug tr{ /* each row of the table */
+ position:relative;  
+ top:1px;
+}
+
+.humbug-left{ /* Left column */
+  	position:relative;
+   float:left;
+    width:50%;
+    /*right:5%;*/
+    top:0em;
+    padding-bottom:1em;
+    
+}
+
+.humbug-right{ /* Right column */
+ position:relative;
+   float:right;
+  /*  right:45%;   /* Position: overlapping */
+ /*color:rgba(0,0,0,0); /* Transparent */
+    
+    /*-ms-transform: translateY(-100%); 
+    -webkit-transform: translateY(-100%); 
+    transform: translateY(-100%);*/
+    
+ top:0px;
+ width:50%;
+ padding-bottom:1em;
+   /* text-shadow: 0px 0px 8px rgba(0,0,0,0.4);*/
+/* z-index:-1;*/
+    /* Transition properties */
+    -webkit-transition-property: color,right,text-shadow;
+    -webkit-transition-duration: 5s; /* Safari 3.1 to 6.0 */
+    transition-property: color,right,text-shadow;
+    transition-duration: 5s;
+}
+
+
+.humbug-right-revealed, .humbug-right-revealed a{ /* Text and links text  */
+    right:-5%; /* Position-out */
+ color:rgba(0,0,0,0.4);  /* visible */
+    text-shadow: 0px 0px 0px rgba(0,0,0,0);
+}
+
+.humbug-right-hidden, .humbug-right-hidden a{ /* Text and links text */
+    right:45%; 
+ color:rgba(0,0,0,0);  
+    text-shadow: 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+
+/* Makes right column appear on hover*/
+.humbug-left:hover ~ .humbug-right{
+ /*right:-350px; 
+ color:rgba(0,0,0,0.5);*/
+}
+/* Makes right column continue to be present on hover */
+.humbug-right:hover{
+ /*right:-350px; 
+ color:rgba(0,0,0,0.5);  */
+}
+
+/* INLINE ANNOTATIONS */
+.highlight{
+ background-color: rgba(255,185,0,0);   
+ -webkit-transition-property: background-color;
+    -webkit-transition-duration: 1s; /* Safari 3.1 to 6.0 */
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+.highlight-enabled{
+    background-color: rgba(255,185,0,0.35);
+}
+.annotation{
+ border:3px solid black;
+	width: 20%;
+	position: absolute;
+	left: 75%;
+    z-index:1;
+    padding:1em;
+    opacity:0;
+    font-size:smaller;
+     max-height:50%;
+ overflow-y: auto;
+    
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 1s; /* Safari 3.1 to 6.0 */
+    transition-property: opacity;
+    transition-duration: 1s;
+}
+/* Hover on highlight to show annotation */
+.highlight:hover ~ .annotation-enabled{
+ opacity:1; 
+}
+.annotation:hover{
+    opacity:1;
+}
+
+.annotation-david{
+    color: blue;
+}
+.annotation-dano{
+    color: purple;
+}
+.annotation-ziv{
+    color:green;
+}
+.annotation-sarah{
+    color:orange;
+}
+
+
+/* CUSTOM FORMAT FOR EACH TITLE */
+#title-85{ /* the new infrastructure of inequality */
+ /*width:40%;   */
+}
+
+#lcp_item_151 .lcp_title{
+ font-size:2.1em;   
+}
+
+#embedded-pipes{
+ position:relative;
+ right:35%;
+}
+
+.embedded-sketch{
+	margin:auto;
+  /*  max-width:100%;
+    height:auto;*/
+	}
+
+/* MOBILE */
+/* Overwrite the rules inside the brackets */
+@media only screen and (max-device-width: 480px) {
+    /* HEADER */
+    .headbar{
+     font-size:0.7em;
+        
+    }
+    #site-title{
+     padding:30px 20px 10px 20px;   
+    }
+    
+    #site-title img {
+    	width: 60%;
+        padding-top: 10px;
+    }
+    
+    #site-description {
+    	font-size: x-small;
+    }
+    
+    #menubar {
+        left: 0; 
+  		right: 0; 
+  		margin: 0 auto;
+        width: 90%;
+    }
+    
+    #menubar .menu {
+    	text-align: center;
+    }
+    
+    #menubar li:first-child {
+    	margin-left: 0;
+    }
+    
+    #menubar li {
+		margin-left: 2em;
+    }
+    
+    #front-page-image img {
+        height: 165px;
+        object-fit: cover;
+    }
+    
+    /* FRONT PAGE */
+    
+    .home {
+    width: 100%
+    }
+    .lcp_line{
+     margin-bottom:0;   
+    }
+    .lcp_item{
+     left:5%;   
+    }
+    .lcp_appear{
+     width:80%;   
+    }
+    .lcp_excerpt{
+     position:static;
+     width:100%;
+     padding-left: 1%;
+    }
+    
+    #lcp_item_151 .lcp_title{
+ 		font-size:1.5em;   
+	}	
+    
+    /*.front-page-img {
+    	width: 100%;
+    }
+    */
+    .lcp_wrapper {
+    width: 90%;
+    }
+    .lcp_thumbnail {
+    	width: 50%;
+        height:auto;
+    }
+    .lcp_number{
+     top:1.7em;
+     z-index:1;
+    }
+    
+    
+    /* ARTICLES*/
+    
+    
+    /* header */
+    
+    .post-template-default #site-title img {
+    	width: 40%;
+        padding-top: 0px;
+    }
+    
+    .post-template-default #site-title {
+    	padding-bottom: 5px;
+    }
+    
+    .post-template-default #site-description {
+    	padding-bottom: 15px;
+    }
+    
+    .post-template-default #menu-top-bar-menu {
+    	margin: 0;
+    }
+    
+    /* body */
+    
+    h1{
+ 		font-size: 140%;
+        margin-top: 4em;
+	}
+
+h2{
+ font-size: 160%;
+}
+
+h3{
+ font-size: 120%;
+    }
+    pre{
+     font-size:0.6em;   
+    }
+    
+    
+    #article-header{
+     margin:10em auto 0;   
+    }
+    
+    .title {
+    font-size: 2.0em;
+    text-align:left;
+    }
+    
+    #article-header h2{
+     font-size:1.1em;   
+    }
+    .article-header-illustrator{
+     font-size:0.8em;   
+    }
+    
+    .article-header-fingerprint{
+     height:10px;   
+    }
+    
+    #article-content,#page-content{
+     padding:1em 1em 0em;   
+     width:85%;
+    }
+    
+	#page-content p,  #page-content pre, #page-content h1, #page-content h2, #page-content h3{
+ 	width:100%;
+    
+	}
+	#article-content p, #article-content pre, #article-content h1, #article-content h2, #article-content h3, #article-content h4{
+ 		width:100%;
+    }
+    
+    img {
+	max-width: 100%;
+	height: auto;
+    }
+    
+    #article-content ol, #article-content ul {
+	width: 80%;
+	margin: auto;
+    }
+    
+    /* Toc */
+    #article-sidebar-handle {
+        display:none;
+    }
+    #sidebar{
+     width:100%;
+     position:static;
+     height:auto;
+     font-size:0.9em;
+     z-index: 0;
+    }
+    #sidebar ul{
+     margin-top:2em;   
+    }
+    
+    #primary{
+     left:0%;   
+      z-index:0;
+    }
+    
+    /* footnotes */
+    #article-notes-handle{
+        display:none;
+    }
+    #article-notes{
+     width:90%;
+        margin:auto;
+       /* top:20%;*/
+        position:static;
+    }
+    .article-notes-unselected {
+	opacity: 1.0;
+    }
+    
+    .table-humbug{
+     width:95%;   
+     text-align:left;
+    }
+    
+    #embedded-pipes{
+display:none;
+}
+
+.embedded-sketch{
+	display:none;
+    }
+  
+}
+
+/*
+     FILE ARCHIVED ON 02:51:17 Dec 13, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 05:52:40 Jul 24, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.616
+  exclusion.robots: 0.037
+  exclusion.robots.policy: 0.023
+  esindex: 0.016
+  cdx.remote: 12.906
+  LoadShardBlock: 986.424 (3)
+  PetaboxLoader3.resolve: 646.59 (4)
+  PetaboxLoader3.datanode: 304.669 (5)
+  load_resource: 185.7 (2)
+*/
