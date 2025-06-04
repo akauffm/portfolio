@@ -2056,7 +2056,7 @@
 
                 <p class="lead text-right"><strong><i>A disembodied voice tells you where to bite the characters. If you bite the right spot, the mosquito feeds and refuels for his next flight. If you bite the wrong spot, the mosquito is grotesquely swatted.</i></strong></p>
                 <blockquote class="text-primary blockquote text-left small hidden-lg hidden-xl"><i>To play <strong>Don't Bug Me</strong>, open this page on a device with a larger screen (or increase the size of your browser window).</i></blockquote>
-                <blockquote class="text-primary blockquote text-left small hidden-md hidden-sm hidden-xs"><i><strong>Don't Bug Me</strong> was playable on this page until late 2020 when Flash was sunsetted and it sadly went the way of hundreds of other little Flash games. <del>There's no practical way of porting it to run on the web without rewriting it from scratch</del> <a href="https://ruffle.rs" target="_blank">Ruffle</a> has revived Flash on the web, so it is playable once more!</i></blockquote><p class="text-left">One summer while I was in grad school, I worked in Tokyo at a division of TBS, where I developed <strong>Don't Bug Me!</strong>, a prototype for an English listening comprehension game for Japanese kids.</p><p class="text-left">I spent a month conceiving the game, laying it out, developing the code, and art directing the incomparable Nina Widartawan-Spenceley, who created the characters and animated the gory death sequences.</p><p class="text-left">The game was written entirely in ActionScript and is designed in a modular fashion to allow a non-coding designer to easily switch out the background image, bite targets, and audio by simply editing a text file.</p>
+                <blockquote class="text-primary blockquote text-left small hidden-md hidden-sm hidden-xs"><i><del><strong>Don't Bug Me</strong> was playable on this page until late 2020 when Flash was sunsetted and it sadly went the way of hundreds of other little Flash games. There's no practical way of porting it to run on the web without rewriting it from scratch.</del> <a href="https://ruffle.rs" target="_blank"><br/><br/><strong>Ruffle</strong></a> has revived Flash on the web, so it is playable once more!</i></blockquote><p class="text-left">One summer while I was in grad school, I worked in Tokyo at a division of TBS, where I developed <strong>Don't Bug Me!</strong>, a prototype for an English listening comprehension game for Japanese kids.</p><p class="text-left">I spent a month conceiving the game, laying it out, developing the code, and art directing the incomparable Nina Widartawan-Spenceley, who created the characters and animated the gory death sequences.</p><p class="text-left">The game was written entirely in ActionScript and is designed in a modular fashion to allow a non-coding designer to easily switch out the background image, bite targets, and audio by simply editing a text file.</p>
                 <hr class="star-primary">
                 <ul class="list-inline item-details text-left">
                     <li>When:
@@ -2358,7 +2358,7 @@
         if (e.target.id == "portfolioModal3") {
             const breakpoint = getBootstrapBreakpoint();
             console.log(breakpoint);
-            if (breakpoint === "md" || breakpoint === "lg" || breakpoint === "xl" || breakpoint === "xxl") {
+            if (!navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
                 loadRuffle();
             }
         }
