@@ -2054,7 +2054,9 @@
          <div class="row">
             <div class="col-md-4">
 
-                <p class="lead text-right"><strong><i>A disembodied voice tells you where to bite the characters. If you bite the right spot, the mosquito feeds and refuels for his next flight. If you bite the wrong spot, the mosquito is grotesquely swatted.</i></strong></p><blockquote class="text-primary blockquote text-left small"><i><strong>Don't Bug Me</strong> was playable on this page until late 2020 when Flash was sunsetted and it sadly went the way of hundreds of other little Flash games. <del>There's no practical way of porting it to run on the web without rewriting it from scratch</del> <a href="https://ruffle.rs" target="_blank">Ruffle</a> has revived Flash on the web, so it is playable once more!</i></blockquote><p class="text-left">One summer while I was in grad school, I worked in Tokyo at a division of TBS, where I developed <strong>Don't Bug Me!</strong>, a prototype for an English listening comprehension game for Japanese kids.</p><p class="text-left">I spent a month conceiving the game, laying it out, developing the code, and art directing the incomparable Nina Widartawan-Spenceley, who created the characters and animated the gory death sequences.</p><p class="text-left">The game was written entirely in ActionScript and is designed in a modular fashion to allow a non-coding designer to easily switch out the background image, bite targets, and audio by simply editing a text file.</p>
+                <p class="lead text-right"><strong><i>A disembodied voice tells you where to bite the characters. If you bite the right spot, the mosquito feeds and refuels for his next flight. If you bite the wrong spot, the mosquito is grotesquely swatted.</i></strong></p>
+                <blockquote class="text-primary blockquote text-left small hidden-lg hidden-xl"><i>To play <strong>Don't Bug Me</strong>, open this page on a device with a larger screen (or increase the size of your browser window).</i></blockquote>
+                <blockquote class="text-primary blockquote text-left small hidden-md hidden-sm hidden-xs"><i><strong>Don't Bug Me</strong> was playable on this page until late 2020 when Flash was sunsetted and it sadly went the way of hundreds of other little Flash games. <del>There's no practical way of porting it to run on the web without rewriting it from scratch</del> <a href="https://ruffle.rs" target="_blank">Ruffle</a> has revived Flash on the web, so it is playable once more!</i></blockquote><p class="text-left">One summer while I was in grad school, I worked in Tokyo at a division of TBS, where I developed <strong>Don't Bug Me!</strong>, a prototype for an English listening comprehension game for Japanese kids.</p><p class="text-left">I spent a month conceiving the game, laying it out, developing the code, and art directing the incomparable Nina Widartawan-Spenceley, who created the characters and animated the gory death sequences.</p><p class="text-left">The game was written entirely in ActionScript and is designed in a modular fashion to allow a non-coding designer to easily switch out the background image, bite targets, and audio by simply editing a text file.</p>
                 <hr class="star-primary">
                 <ul class="list-inline item-details text-left">
                     <li>When:
@@ -2073,18 +2075,25 @@
                 </ul>
             </div>
             <div class="col-md-8">
-
+                    <div class="hidden-lg hidden-xl">
+                    <div class="extra">
+                        <div class="row">
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <iframe id="censorme_vid" class="embed-responsive-item" width="600" height="450" src="https://www.youtube-nocookie.com/embed/hEBJOytcd8E?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <div class="extra">
                         <div class="row">
                             <div id="bugme" class="hidden-md hidden-sm hidden-xs"></div>
                         </div>
-
-                        <div class="hidden-lg hidden-xl">
+                        <!--<div class="hidden-lg hidden-xl">
                             <img class="img-responsive" src="img/portfolio/dontbugme_1.jpg" alt="screenshot from the game" title="A boy and a girl wave as an ominous voice directs you where to bite them">
                             <img class="img-responsive" src="img/portfolio/dontbugme_2.jpg" alt="screenshot from the game" title="Bites leave uncomfortable looking bumps">
                             <img class="img-responsive" src="img/portfolio/dontbugme_3.jpg" alt="screenshot from the game" title="The game screen scrolls to reveal the children's full bodies and their unsuspecting dog, also a target of your unquenchable bloodthirst">
                             <img class="img-responsive" src="img/portfolio/dontbugme_4.jpg" alt="screenshot from the game" title="A misunderstood possessive pronoun can end in a blood bath">
-                        </div>
+                        </div>-->
                         <div class="row hidden-md hidden-sm hidden-xs">
                             <h3><span class="label pull-left label-primary">DIRECTIONS</span></h3>
                             <br/><br/>
@@ -2098,8 +2107,6 @@
                             </ol>
                         </div>
                     </div>
-
-                <!--<div class="extra"><div class="embed-responsive embed-responsive-4by3"><iframe id="censorme_vid" class="embed-responsive-item" width="640" height="480" src="https://www.youtube-nocookie.com/embed/hEBJOytcd8E?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>-->
 
                 <br/>
                 <br/>
@@ -2290,6 +2297,16 @@
     let rufflePlayer = null;
     const swfPath = "flash/SingleSWFPreloading2.swf"; // Replace with actual path
 
+    function getBootstrapBreakpoint() {
+      const width = window.innerWidth;
+      if (width < 576) return 'xs';
+      if (width < 768) return 'sm';
+      if (width < 992) return 'md';
+      if (width < 1200) return 'lg';
+      if (width < 1400) return 'xl';
+      return 'xxl';
+    }
+
     function loadRuffle() {
         const ruffle = window.RufflePlayer.newest();
         rufflePlayer = ruffle.createPlayer();
@@ -2338,8 +2355,12 @@
     $iframe.attr("src", $iframe.attr("src"));
 });
 	$(".portfolio-modal").on('show.bs.modal', function (e) {
-         if (e.target.id == "portfolioModal3") {
-            loadRuffle();
+        if (e.target.id == "portfolioModal3") {
+            const breakpoint = getBootstrapBreakpoint();
+            console.log(breakpoint);
+            if (breakpoint === "md" || breakpoint === "lg" || breakpoint === "xl" || breakpoint === "xxl") {
+                loadRuffle();
+            }
         }
 
         $vid = $(this).find("video");
