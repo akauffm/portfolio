@@ -2296,10 +2296,14 @@
 <script>
 
     // Allows sending open modal links
-    $(window).on('load', function() {
-        if (window.location.hash) {
+    $(document).ready(function() {
+        // This runs as soon as the HTML is ready, so it's fast.
+        if (window.location.hash.includes('portfolioModal')) {
             var hash = window.location.hash;
-            $(hash).modal('show');
+            if ($(hash).length) {
+                // The modal is lightweight now, so this command will work instantly.
+                $(hash).modal('show');
+            }
         }
     });
 
