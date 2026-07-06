@@ -22,6 +22,10 @@ a {
   a:hover, a:focus {
     color: #eb3812; }
 
+a:focus:not(:focus-visible),
+.btn:focus:not(:focus-visible) {
+  outline: none; }
+
 h1,
 h2,
 h3,
