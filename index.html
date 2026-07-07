@@ -2011,7 +2011,7 @@
                 </a>
                 
                 
-                <div class="npr-iframe"><p class="small text-center npr-iframe-title"><i><strong>A Visit To New York University’s Interactive Telecommunications Program</i></strong></p><audio id="otm-audio" class="npr-iframe-content" controls preload="none" data-src="https://pdst.fm/e/dts.podtrac.com/pts/redirect.mp3/waaa.wnyc.org/otm/otm051410e.mp3"></audio></div>
+                <div class="npr-iframe"><p class="small text-center npr-iframe-title"><i><strong>A Visit To New York University’s Interactive Telecommunications Program</i></strong></p><audio id="otm-audio" class="npr-iframe-content" controls preload="none" data-src="https://pdst.fm/e/dts.podtrac.com/pts/redirect.mp3/waaa.wnyc.org/otm/otm051410e.mp3" data-fallback-src="img/portfolio/vids/otm_podcast.mp3" onerror="otmAudioFallback(this)"></audio></div>
                 <p class="small text-center">Hear Brooke Gladstone's skeptical assessment on NPR's <a href="http://www.wnyc.org/story/132778-a-visit-to-new-york-universitys-interactive-telecommunications-program" target="_blank">On the Media</a>, minute <a href="#" class="npr-timestamp" onclick="var a=document.getElementById('otm-audio');a.currentTime=17*60+8;a.play();return false;"><strong>17&#58;08</strong></a>.</p>
                 
                 
@@ -2496,6 +2496,16 @@
             }
         }
     });
+
+    // If the primary (WNYC-hosted) audio source 404s or otherwise fails,
+    // fall back to our own locally-hosted copy.
+    function otmAudioFallback(el) {
+        var fallback = el.getAttribute('data-fallback-src');
+        if (fallback && el.getAttribute('src') !== fallback) {
+            el.setAttribute('src', fallback);
+            el.load();
+        }
+    }
 
     let rufflePlayer = null;
 
